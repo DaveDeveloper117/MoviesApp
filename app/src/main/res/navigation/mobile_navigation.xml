@@ -7,15 +7,15 @@
 
     <fragment
         android:id="@+id/navigation_movies"
-        android:name="com.davedevab.moviesapp.ui.home.HomeFragment"
+        android:name="com.davedevab.moviesapp.ui.movies.MovieListFragment"
         android:label="@string/title_movies"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_movie_list_list" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.davedevab.moviesapp.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_series"
+        android:name="com.davedevab.moviesapp.ui.series.TVSeriesListFragment"
+        android:label="@string/title_series"
+        tools:layout="@layout/fragment_tv_series_list_list" />
 
     <fragment
         android:id="@+id/navigation_notifications"
