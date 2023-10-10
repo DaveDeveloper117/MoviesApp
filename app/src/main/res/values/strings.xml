@@ -11,4 +11,6 @@
     <string name="movie_rating">0</string>
     <string name="title_series">TV Series</string>
     <string name="title_people">People</string>
+    <string name="fabdesc">FAB</string>
+    <string name="vote_count">0000</string>
 </resources>

@@ -32,11 +32,15 @@ class TVSeriesRecyclerViewAdapter() : RecyclerView.Adapter<TVSeriesRecyclerViewA
         holder.tvSynopsis.text = item.overview
         holder.tvRelease.text = item.first_air_date
         holder.tvRating.text = item.vote_average.toString()
-        holder.ivPoster.load(Constants.IMAGE_BASE_URL + item.poster_path){
+        holder.ivPoster.load(Constants.IMAGE_ORIGINAL_BASE_URL + item.backdrop_path){
             crossfade(true)
             placeholder(R.drawable.placeholder_load)
         }
-        holder.ivBackdrop.load(Constants.IMAGE_BASE_URL + item.backdrop_path){
+        holder.ivPosterMini.load(Constants.IMAGE_BASE_URL + item.poster_path){
+            crossfade(true)
+            placeholder(com.davedevab.moviesapp.R.drawable.placeholder_load)
+        }
+        holder.ivBackdrop.load(Constants.IMAGE_ORIGINAL_BASE_URL + item.backdrop_path){
             crossfade(true)
             placeholder(R.drawable.placeholder_load)
         }
@@ -52,6 +56,7 @@ class TVSeriesRecyclerViewAdapter() : RecyclerView.Adapter<TVSeriesRecyclerViewA
     inner class ViewHolder(binding: FragmentTvSeriesItemBinding) : RecyclerView.ViewHolder(binding.root) {
         val ivBackdrop: ImageView = binding.backPoster
         val ivPoster: ImageView = binding.poster
+        val ivPosterMini: ImageView = binding.posterMini
         val tvTitle: TextView = binding.title
         val tvSynopsis: TextView = binding.description
         val tvRelease: TextView = binding.releaseDate

@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:contentDescription="@string/content_description_media"
         android:scaleType="centerCrop"
-        android:tint="#A3000000"
+        android:tint="#CC000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,17 +21,18 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
+        style="?attr/materialCardViewElevatedStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:alpha="0.8"
+        android:alpha="0.9"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.2">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -41,25 +42,41 @@
             <ImageView
                 android:id="@+id/poster"
                 android:layout_width="match_parent"
-                android:layout_height="429dp"
+                android:layout_height="410dp"
                 android:contentDescription="@string/content_description_media"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/placeholder_load" />
+                android:tint="#4D000000"
+                app:srcCompat="@drawable/placeholder_load"
+                tools:ignore="UseAppTint" />
 
             <!-- Valoración -->
             <TextView
+                style="?attr/floatingActionButtonSmallStyle"
                 android:id="@+id/rating"
+                android:elevation="16dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/rating_bg"
                 android:gravity="center"
                 android:text="@string/movie_rating"
                 android:textAlignment="center"
                 android:textAppearance="?attr/textAppearanceHeadlineLarge" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/posterMini"
+                android:layout_width="132dp"
+                android:layout_height="198dp"
+                android:contentDescription="@string/content_description_media"
+                android:scaleType="centerCrop"
+                android:layout_above="@id/title"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="16dp"
+                app:shapeAppearance="?attr/shapeAppearanceLargeComponent"
+                app:srcCompat="@drawable/placeholder_load" />
 
             <!-- Título de la película en la parte inferior -->
             <TextView
@@ -67,7 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/poster"
-                android:background="#80000000"
+                android:background="@drawable/gradient_blur"
                 android:padding="16dp"
                 android:text="@string/movie_title"
                 android:textAppearance="?attr/textAppearanceTitleLarge"
@@ -90,19 +107,73 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/description"
-                android:orientation="horizontal"
-                android:padding="8dp">
+                android:layout_above="@id/title"
+                android:layout_toEndOf="@+id/posterMini"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
 
-                <!-- Fecha de lanzamiento -->
-                <TextView
-                    android:id="@+id/release_date"
-                    android:layout_width="0dp"
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/release_date"
-                    android:textAlignment="center"
-                    android:textAppearance="?attr/textAppearanceLabelLarge" />
+                    android:gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical">
+
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        style="?attr/floatingActionButtonSmallStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:contentDescription="@string/fabdesc"
+                        android:src="@drawable/round_calendar_month_24"
+                        app:elevation="8dp" />
+
+                    <!-- Fecha de lanzamiento -->
+                    <TextView
+                        android:id="@+id/release_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/release_date"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:textAppearance="?attr/textAppearanceLabelLarge" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical">
+
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        style="?attr/floatingActionButtonSmallStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:contentDescription="@string/fabdesc"
+                        android:src="@drawable/round_thumb_up_24"
+                        app:elevation="8dp" />
+
+                    <!-- Fecha de lanzamiento -->
+                    <TextView
+                        android:id="@+id/vote_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vote_count"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:textAppearance="?attr/textAppearanceLabelLarge" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
 
             </LinearLayout>
         </RelativeLayout>
