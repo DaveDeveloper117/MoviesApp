@@ -110,27 +110,70 @@
                 android:layout_above="@id/title"
                 android:layout_toEndOf="@+id/posterMini"
                 android:layout_alignParentEnd="true"
-                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    style="?attr/floatingActionButtonSmallStyle"
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:contentDescription="@string/fabdesc"
-                    android:src="@drawable/round_calendar_month_24"
-                    app:elevation="8dp" />
+                    android:gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical">
 
-                <!-- Fecha de lanzamiento -->
-                <TextView
-                    android:id="@+id/release_date"
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        style="?attr/floatingActionButtonSmallStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:contentDescription="@string/fab_description"
+                        android:src="@drawable/round_calendar_month_24"
+                        app:elevation="8dp" />
+
+                    <!-- Fecha de lanzamiento -->
+                    <TextView
+                        android:id="@+id/release_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/release_date"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:textAppearance="?attr/textAppearanceLabelLarge" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/release_date"
-                    android:textColor="@color/white"
-                    android:textAlignment="center"
-                    android:textAppearance="?attr/textAppearanceLabelLarge" />
+                    android:gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical">
+
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        style="?attr/floatingActionButtonSmallStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:contentDescription="@string/fab_description"
+                        android:src="@drawable/round_thumb_up_24"
+                        app:elevation="8dp" />
+
+                    <!-- Fecha de lanzamiento -->
+                    <TextView
+                        android:id="@+id/vote_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vote_count"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:textAppearance="?attr/textAppearanceLabelLarge" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
 
             </LinearLayout>
         </RelativeLayout>

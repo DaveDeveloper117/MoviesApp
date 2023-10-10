@@ -41,13 +41,13 @@ class PeopleListRecyclerViewAdapter() : RecyclerView.Adapter<PeopleListRecyclerV
 
     private fun formatKnownFor(knownForList: List<KnownFor>): String {
         val nonNullKnownForList = knownForList.filter { knownFor ->
-            true
+            knownFor.name != null || knownFor.title != null
         }
 
         val knownForTextList = nonNullKnownForList.mapNotNull { knownFor ->
             val title = knownFor.title
             val name = knownFor.name
-            if (name != null) {
+            if (title != null && name != null) {
                 "$title, $name"
             } else {
                 title ?: name

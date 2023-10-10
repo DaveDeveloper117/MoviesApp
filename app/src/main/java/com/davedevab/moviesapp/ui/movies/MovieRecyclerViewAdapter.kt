@@ -1,10 +1,11 @@
 package com.davedevab.moviesapp.ui.movies
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.davedevab.moviesapp.R
 import com.davedevab.moviesapp.common.Constants
@@ -45,9 +46,8 @@ class MovieRecyclerViewAdapter() : RecyclerView.Adapter<MovieRecyclerViewAdapter
             crossfade(true)
             placeholder(R.drawable.placeholder_load)
         }
-
+        
     }
-
     override fun getItemCount(): Int = movies.size
     fun setData(popularMovies: List<Movie>?) {
         movies = popularMovies!!
@@ -64,7 +64,7 @@ class MovieRecyclerViewAdapter() : RecyclerView.Adapter<MovieRecyclerViewAdapter
         val tvSynopsis: TextView = binding.description
         val tvRelease: TextView = binding.releaseDate
         val tvRating : TextView = binding.rating
-
+        val fragmentContainer: ConstraintLayout = binding.fragmentView
     }
 
 }

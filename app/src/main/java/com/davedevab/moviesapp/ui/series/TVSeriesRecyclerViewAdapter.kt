@@ -29,6 +29,7 @@ class TVSeriesRecyclerViewAdapter() : RecyclerView.Adapter<TVSeriesRecyclerViewA
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = tvSeries[position]
         holder.tvTitle.text = item.name
+        holder.tvVotes.text = item.vote_count.toString()
         holder.tvSynopsis.text = item.overview
         holder.tvRelease.text = item.first_air_date
         holder.tvRating.text = item.vote_average.toString()
@@ -58,6 +59,7 @@ class TVSeriesRecyclerViewAdapter() : RecyclerView.Adapter<TVSeriesRecyclerViewA
         val ivPoster: ImageView = binding.poster
         val ivPosterMini: ImageView = binding.posterMini
         val tvTitle: TextView = binding.title
+        val tvVotes: TextView = binding.voteCount
         val tvSynopsis: TextView = binding.description
         val tvRelease: TextView = binding.releaseDate
         val tvRating : TextView = binding.rating

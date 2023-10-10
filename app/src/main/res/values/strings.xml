@@ -1,16 +1,13 @@
 <resources>
     <string name="app_name">Movies App</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_movies">Movies</string>
-    <string name="content_description_media">image-movie\n</string>
+    <string name="title_movies">Top Movies</string>
+    <string name="content_description_media">image-movie</string>
     <string name="movie_title">Lorem Ipsum</string>
     <string name="movie_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse venenatis erat quis tortor venenatis ullamcorper. In lobortis ipsum luctus fringilla gravida.</string>
-    <string name="release_date">00-00-00</string>
+    <string name="release_date">0000–00–00</string>
     <string name="movie_rating">0</string>
-    <string name="title_series">TV Series</string>
-    <string name="title_people">People</string>
-    <string name="fabdesc">FAB</string>
+    <string name="title_series">Top TV Series</string>
+    <string name="title_people">Top People</string>
+    <string name="fab_description">FAB</string>
     <string name="vote_count">0000</string>
 </resources>
