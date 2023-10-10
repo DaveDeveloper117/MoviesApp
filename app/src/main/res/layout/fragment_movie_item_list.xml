@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/list"
-    android:name="com.davedevab.moviesapp.ui.series.TVSeriesFragment"
+    android:name="com.davedevab.moviesapp.ui.movies.MovieListFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".ui.series.TVSeriesListFragment"
-    tools:listitem="@layout/fragment_tv_series_list" />
+    tools:context=".ui.movies.MovieListFragment"
+    tools:listitem="@layout/fragment_movie_item" />

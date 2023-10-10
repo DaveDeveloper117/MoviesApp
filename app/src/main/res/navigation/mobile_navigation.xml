@@ -9,17 +9,17 @@
         android:id="@+id/navigation_movies"
         android:name="com.davedevab.moviesapp.ui.movies.MovieListFragment"
         android:label="@string/title_movies"
-        tools:layout="@layout/fragment_movie_list_list" />
+        tools:layout="@layout/fragment_movie_item_list" />
 
     <fragment
         android:id="@+id/navigation_series"
         android:name="com.davedevab.moviesapp.ui.series.TVSeriesListFragment"
         android:label="@string/title_series"
-        tools:layout="@layout/fragment_tv_series_list_list" />
+        tools:layout="@layout/fragment_tv_series_item_list" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.davedevab.moviesapp.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_people"
+        android:name="com.davedevab.moviesapp.ui.people.PeopleListFragment"
+        android:label="@string/title_people"
+        tools:layout="@layout/fragment_people_item_list" />
 </navigation>

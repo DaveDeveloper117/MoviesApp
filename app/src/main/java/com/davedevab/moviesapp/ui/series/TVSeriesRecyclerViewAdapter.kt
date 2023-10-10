@@ -8,7 +8,7 @@ import android.widget.TextView
 import coil.load
 import com.davedevab.moviesapp.R
 import com.davedevab.moviesapp.common.Constants
-import com.davedevab.moviesapp.databinding.FragmentTvSeriesListBinding
+import com.davedevab.moviesapp.databinding.FragmentTvSeriesItemBinding
 import com.davedevab.moviesapp.retrofit.models.series.TVSeries
 
 class TVSeriesRecyclerViewAdapter() : RecyclerView.Adapter<TVSeriesRecyclerViewAdapter.ViewHolder>() {
@@ -17,7 +17,7 @@ class TVSeriesRecyclerViewAdapter() : RecyclerView.Adapter<TVSeriesRecyclerViewA
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         return ViewHolder(
-            FragmentTvSeriesListBinding.inflate(
+            FragmentTvSeriesItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -49,7 +49,7 @@ class TVSeriesRecyclerViewAdapter() : RecyclerView.Adapter<TVSeriesRecyclerViewA
         notifyDataSetChanged()
     }
 
-    inner class ViewHolder(binding: FragmentTvSeriesListBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(binding: FragmentTvSeriesItemBinding) : RecyclerView.ViewHolder(binding.root) {
         val ivBackdrop: ImageView = binding.backPoster
         val ivPoster: ImageView = binding.poster
         val tvTitle: TextView = binding.title

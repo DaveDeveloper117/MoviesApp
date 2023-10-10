@@ -10,4 +10,5 @@
     <string name="release_date">00-00-00</string>
     <string name="movie_rating">0</string>
     <string name="title_series">TV Series</string>
+    <string name="title_people">People</string>
 </resources>

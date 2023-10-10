@@ -8,7 +8,7 @@ import android.widget.TextView
 import coil.load
 import com.davedevab.moviesapp.R
 import com.davedevab.moviesapp.common.Constants
-import com.davedevab.moviesapp.databinding.FragmentMovieListBinding
+import com.davedevab.moviesapp.databinding.FragmentMovieItemBinding
 import com.davedevab.moviesapp.retrofit.models.movies.Movie
 
 class MovieRecyclerViewAdapter() : RecyclerView.Adapter<MovieRecyclerViewAdapter.ViewHolder>() {
@@ -17,7 +17,7 @@ class MovieRecyclerViewAdapter() : RecyclerView.Adapter<MovieRecyclerViewAdapter
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         return ViewHolder(
-            FragmentMovieListBinding.inflate(
+            FragmentMovieItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -49,7 +49,7 @@ class MovieRecyclerViewAdapter() : RecyclerView.Adapter<MovieRecyclerViewAdapter
         notifyDataSetChanged()
     }
 
-    inner class ViewHolder(binding: FragmentMovieListBinding) :
+    inner class ViewHolder(binding: FragmentMovieItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val ivBackdrop: ImageView = binding.backPoster
         val ivPoster: ImageView = binding.poster

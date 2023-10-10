@@ -15,9 +15,9 @@
         android:title="@string/title_series" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:id="@+id/navigation_people"
+        android:icon="@drawable/ic_round_people_alt_24"
         android:enabled="true"
-        android:title="@string/title_notifications" />
+        android:title="@string/title_people" />
 
 </menu>

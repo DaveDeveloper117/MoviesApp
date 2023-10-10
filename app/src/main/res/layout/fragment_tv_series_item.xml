@@ -24,12 +24,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:alpha="0.8"
         android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:focusable="true">
+        app:layout_constraintVertical_bias="0.0">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -39,7 +41,7 @@
             <ImageView
                 android:id="@+id/poster"
                 android:layout_width="match_parent"
-                android:layout_height="396dp"
+                android:layout_height="429dp"
                 android:contentDescription="@string/content_description_media"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/placeholder_load" />
@@ -49,15 +51,15 @@
                 android:id="@+id/rating"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="8dp"
+                android:layout_alignParentTop="true"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rating_bg"
+                android:gravity="center"
                 android:text="@string/movie_rating"
                 android:textAlignment="center"
-                android:textAppearance="?attr/textAppearanceHeadlineLarge"
-                android:gravity="center"
-                android:background="@drawable/rating_bg"/>
+                android:textAppearance="?attr/textAppearanceHeadlineLarge" />
 
             <!-- Título de la película en la parte inferior -->
             <TextView
@@ -69,7 +71,7 @@
                 android:padding="16dp"
                 android:text="@string/movie_title"
                 android:textAppearance="?attr/textAppearanceTitleLarge"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF" />
 
             <!-- Descripción de la película -->
             <TextView
@@ -77,11 +79,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/poster"
-                android:padding="16dp"
-                android:maxLines="2"
                 android:ellipsize="end"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:maxLines="2"
+                android:padding="16dp"
                 android:text="@string/movie_description"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
                 android:textColor="?android:textColorSecondary" />
 
             <!-- Fecha de lanzamiento y valoración en la misma línea -->
@@ -98,9 +100,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textAlignment="center"
                     android:text="@string/release_date"
-                    android:textAppearance="?attr/textAppearanceLabelLarge"/>
+                    android:textAlignment="center"
+                    android:textAppearance="?attr/textAppearanceLabelLarge" />
 
             </LinearLayout>
         </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.davedevab.moviesapp.ui.movies
+package com.davedevab.moviesapp.ui.people
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,17 +12,18 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.davedevab.moviesapp.R
-import com.davedevab.moviesapp.retrofit.models.movies.Movie
+import com.davedevab.moviesapp.retrofit.models.people.People
 
 /**
  * A fragment representing a list of Items.
  */
-class MovieListFragment : Fragment() {
+class PeopleListFragment : Fragment() {
 
-    private lateinit var movieViewModel: MovieViewModel
-    private lateinit var movieAdapter: MovieRecyclerViewAdapter
-    private var popularMovies: List<Movie> = ArrayList()
+    private lateinit var peopleViewModel: PeopleViewModel
+    private lateinit var peopleAdapter: PeopleListRecyclerViewAdapter
+    private var popularPeople: List<People> = ArrayList()
     private var columnCount = 1
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -31,16 +32,12 @@ class MovieListFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_movie_item_list, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view = inflater.inflate(R.layout.fragment_people_item_list, container, false)
         val snapHelper = PagerSnapHelper()
         snapHelper.attachToRecyclerView(view as RecyclerView?)
-        movieViewModel = ViewModelProvider(this).get(MovieViewModel::class.java)
-        movieAdapter = MovieRecyclerViewAdapter()
-
+        peopleViewModel = ViewModelProvider(this).get(PeopleViewModel::class.java)
+        peopleAdapter = PeopleListRecyclerViewAdapter()
         // Set the adapter
         if (view is RecyclerView) {
             with(view) {
@@ -48,13 +45,13 @@ class MovieListFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = movieAdapter
+                adapter = peopleAdapter
             }
         }
 
-        movieViewModel.getPopularMovies().observe(viewLifecycleOwner, Observer {
-            popularMovies = it
-            movieAdapter.setData(popularMovies)
+        peopleViewModel.getPopularPeople().observe(viewLifecycleOwner, Observer{
+            popularPeople = it
+            peopleAdapter.setData(popularPeople)
         })
 
         return view
@@ -65,10 +62,10 @@ class MovieListFragment : Fragment() {
         const val ARG_COLUMN_COUNT = "column-count"
         @JvmStatic
         fun newInstance(columnCount: Int) =
-            MovieListFragment().apply {
-                arguments = Bundle().apply {
-                    putInt(ARG_COLUMN_COUNT, columnCount)
+                PeopleListFragment().apply {
+                    arguments = Bundle().apply {
+                        putInt(ARG_COLUMN_COUNT, columnCount)
+                    }
                 }
-            }
     }
 }

@@ -36,7 +36,7 @@ class TVSeriesListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_tv_series_list_list, container, false)
+        val view = inflater.inflate(R.layout.fragment_tv_series_item_list, container, false)
         val snapHelper = PagerSnapHelper()
         snapHelper.attachToRecyclerView(view as RecyclerView?)
         tvSeriesViewModel = ViewModelProvider(this).get(TvSeriesViewModel::class.java)

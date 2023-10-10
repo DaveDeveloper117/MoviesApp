@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Poster de la película -->
+            <ImageView
+                android:id="@+id/poster"
+                android:layout_width="match_parent"
+                android:layout_height="429dp"
+                android:contentDescription="@string/content_description_media"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/placeholder_load" />
+
+            <!-- Título de la película en la parte inferior -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/poster"
+                android:background="#80000000"
+                android:padding="16dp"
+                android:text="@string/movie_title"
+                android:textAppearance="?attr/textAppearanceTitleLarge"
+                android:textColor="#FFFFFF" />
+
+            <!-- Descripción de la película -->
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/poster"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:padding="16dp"
+                android:text="@string/movie_description"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:textColor="?android:textColorSecondary" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
