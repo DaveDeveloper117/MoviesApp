@@ -1,6 +1,17 @@
 package com.davedevab.moviesapp.common
 
 class Constants {
+
+    /**
+     * Esta clase define constantes que se utilizan en toda la aplicación,
+     * como la URL base de la API, la clave de la API,
+     * URL para imágenes y otros valores relacionados con la API.
+     *
+     * @author DaveDev117
+     * @version 1.0
+     * @since 10/10/2023
+     */
+
     companion object{
         const val BASE_URL = "https://api.themoviedb.org/3/"
         const val API_KEY = "4eec76fcdd65b57dc00290ce981b560b"

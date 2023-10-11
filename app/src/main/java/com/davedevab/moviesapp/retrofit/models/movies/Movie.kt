@@ -1,6 +1,16 @@
 package com.davedevab.moviesapp.retrofit.models.movies
 
 data class Movie(
+
+    /**
+     * Esta clase representa los datos de una película.
+     * Cada propiedad coincide con un campo de datos de la respuesta de la API de TheMovieDB.
+     *
+     * @author DaveDev117
+     * @version 1.0
+     * @since 10/10/2023
+     */
+
     val adult: Boolean,
     val backdrop_path: String,
     val genre_ids: List<Int>,

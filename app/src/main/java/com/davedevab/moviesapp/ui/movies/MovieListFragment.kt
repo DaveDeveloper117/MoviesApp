@@ -1,23 +1,28 @@
 package com.davedevab.moviesapp.ui.movies
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.davedevab.moviesapp.R
 import com.davedevab.moviesapp.retrofit.models.movies.Movie
 
-/**
- * A fragment representing a list of Items.
- */
 class MovieListFragment : Fragment() {
+
+    /**
+     * Esta clase muestra una lista de películas populares en un RecyclerView.
+     *
+     * @author DaveDev117
+     * @version 1.0
+     * @since 10/10/2023
+     */
 
     private lateinit var movieViewModel: MovieViewModel
     private lateinit var movieAdapter: MovieRecyclerViewAdapter
@@ -35,10 +40,12 @@ class MovieListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inicialización de componentes
         val view = inflater.inflate(R.layout.fragment_movie_item_list, container, false)
         val snapHelper = PagerSnapHelper()
         snapHelper.attachToRecyclerView(view as RecyclerView?)
         movieViewModel = ViewModelProvider(this).get(MovieViewModel::class.java)
+        // Creación del adaptador
         movieAdapter = MovieRecyclerViewAdapter()
 
         // Set the adapter
@@ -52,8 +59,10 @@ class MovieListFragment : Fragment() {
             }
         }
 
+        // Obtención de datos de la capa de datos
         movieViewModel.getPopularMovies().observe(viewLifecycleOwner, Observer {
             popularMovies = it
+            // Actualización del adaptador
             movieAdapter.setData(popularMovies)
         })
 
