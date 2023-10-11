@@ -12,13 +12,11 @@
         android:layout_height="match_parent"
         android:contentDescription="@string/content_description_media"
         android:scaleType="centerCrop"
-        android:tint="#CC000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/placeholder_load"
-        tools:ignore="UseAppTint" />
+        app:srcCompat="@drawable/placeholder_load" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
@@ -26,14 +24,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:alpha="0.9"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2">
+        app:layout_constraintVertical_bias="0.3">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -43,7 +40,7 @@
             <ImageView
                 android:id="@+id/poster"
                 android:layout_width="match_parent"
-                android:layout_height="410dp"
+                android:layout_height="429dp"
                 android:contentDescription="@string/content_description_media"
                 android:scaleType="centerCrop"
                 android:tint="#4D000000"

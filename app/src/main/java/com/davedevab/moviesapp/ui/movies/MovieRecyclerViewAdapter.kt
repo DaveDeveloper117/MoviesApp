@@ -1,10 +1,13 @@
 package com.davedevab.moviesapp.ui.movies
 
+import android.graphics.RenderEffect
+import android.graphics.Shader
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.davedevab.moviesapp.R
@@ -36,7 +39,7 @@ class MovieRecyclerViewAdapter() : RecyclerView.Adapter<MovieRecyclerViewAdapter
         )
 
     }
-
+    @RequiresApi(Build.VERSION_CODES.S)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = movies[position]
         // Establece el los elementos de texto de la pelicula
@@ -54,11 +57,12 @@ class MovieRecyclerViewAdapter() : RecyclerView.Adapter<MovieRecyclerViewAdapter
             crossfade(true)
             placeholder(R.drawable.placeholder_load)
         }
-        holder.ivBackdrop.load(Constants.IMAGE_ORIGINAL_BASE_URL + item.backdrop_path){
+        holder.ivBackdrop.load(Constants.IMAGE_BASE_URL + item.backdrop_path){
             crossfade(true)
             placeholder(R.drawable.placeholder_load)
         }
-        
+        val blur = RenderEffect.createBlurEffect(50F, 50F, Shader.TileMode.CLAMP)
+        holder.ivBackdrop.setRenderEffect(blur)
     }
     override fun getItemCount(): Int = movies.size
 
@@ -82,7 +86,7 @@ class MovieRecyclerViewAdapter() : RecyclerView.Adapter<MovieRecyclerViewAdapter
         val tvSynopsis: TextView = binding.description
         val tvRelease: TextView = binding.releaseDate
         val tvRating : TextView = binding.rating
-        val fragmentContainer: ConstraintLayout = binding.fragmentView
+
     }
 
 }
